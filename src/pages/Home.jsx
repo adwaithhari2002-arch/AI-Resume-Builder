@@ -55,40 +55,40 @@ function Home() {
                     <div className="col-lg-5">
                         <div className="row">
                             <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                 <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                 <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                 <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                 <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                              <div className="col-md-3">
-                                <img className='img-fluid p-2' src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTFfcGhvdG9fb2ZfcHJvZmVzc2lvbmFsX21hbl9pbl9idXNpbmVzc19zdWl0c19wcl8xYjBmYTE5My0xZWY0LTQyMjgtOTI1ZC0zNDBmNGZlYjE1OTAucG5n.png" alt="user" />
+                                 <img className='img-fluid p-2' src="/person.png" alt="user" />
                             </div>
                         </div>
                     </div>
