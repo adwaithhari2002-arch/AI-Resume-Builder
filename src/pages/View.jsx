@@ -16,7 +16,7 @@ function View() {
                     {/* navigation icons */}
                     <div className="d-flex justify-content-center align-items-center">
                         {/* download */}
-                        <button style={{ color: '#714a2f' }} className="btn  me-2"> <FaFileDownload />Download CV</button>
+                        <button style={{ color: '#714a2f' }} className="btn  me-2"> <FaFileDownload className='fs-3' />Download CV</button>
                         {/* edit */}
                         <Edit />
                         {/* all resumes */}

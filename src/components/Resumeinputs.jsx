@@ -10,10 +10,18 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import jobRole from '../assets/jobRole.json'
+import jobSkills from '../assets/jobSkills.json'
+import summaries from '../assets/summaries.json'
 
 const steps = ['Basic Informations', 'Contact Details', 'Educational Details', 'Review & Submit'];
 
 function ResumeInputs() {
+
+    const [resumeDetails, setResumeDetails] = React.useState({
+        fullName: "", location: "", job: "", email: "", phone: "", linkedin: "", github: "", degree: "", college: "", year: "", skills: [], summary: ""
+    })
+    console.log(resumeDetails);
 
     const [activeStep, setActiveStep] = React.useState(0);
 
@@ -32,16 +40,19 @@ function ResumeInputs() {
                 <div>
                     <h3>Personal Details</h3>
                     <div className="p-3 row">
-                        <TextField id="standard-basic-name" label="FullName" variant="standard" />
-                        <TextField id="standard-basic-name" label="Location" variant="standard" />
+                        <TextField value={resumeDetails.fullName} onChange={e => setResumeDetails({ ...resumeDetails, fullName: e.target.value })} id="standard-basic-name" label="FullName" variant="standard" />
+                        <TextField value={resumeDetails.location} onChange={e => setResumeDetails({ ...resumeDetails, location: e.target.value })} id="standard-basic-name" label="Location" variant="standard" />
                         <FormControl variant='standard'>
                             <InputLabel id="demo-simple-select-label">Choose Job Title</InputLabel>
-                            <Select
+                            <Select defaultValue={''} onChange={e => setResumeDetails({ ...resumeDetails, job: e.target.value })}
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                label="Job"
-                            >
-                                <MenuItem value={'Job'}>Job</MenuItem>
+                                label="Job">
+                                {
+                                    jobRole.jobRoles.map(job=>(
+                                        <MenuItem key={job} value={job}>{job}</MenuItem>
+                                    ))
+                                }
                             </Select>
                         </FormControl>
                     </div>
@@ -53,10 +64,10 @@ function ResumeInputs() {
                 <div>
                     <h3>Contact Details</h3>
                     <div className="p-3 row">
-                        <TextField id="standard-basic-email" label="Email" variant="standard" />
-                        <TextField id="standard-basic-num" label="Contact Number" variant="standard" />
-                        <TextField id="standard-basic-linkedin" label="LinkedIn Link" variant="standard" />
-                        <TextField id="standard-basic-github" label="GitHub Link" variant="standard" />
+                        <TextField value={resumeDetails.email} onChange={e => setResumeDetails({ ...resumeDetails, email: e.target.value })} id="standard-basic-email" label="Email" variant="standard" />
+                        <TextField value={resumeDetails.phone} onChange={e => setResumeDetails({ ...resumeDetails, phone: e.target.value })} id="standard-basic-num" label="Contact Number" variant="standard" />
+                        <TextField value={resumeDetails.linkedin} onChange={e => setResumeDetails({ ...resumeDetails, linkedin: e.target.value })} id="standard-basic-linkedin" label="LinkedIn Link" variant="standard" />
+                        <TextField value={resumeDetails.github} onChange={e => setResumeDetails({ ...resumeDetails, github: e.target.value })} id="standard-basic-github" label="GitHub Link" variant="standard" />
 
                     </div>
                 </div>
@@ -66,10 +77,10 @@ function ResumeInputs() {
             case 2: return (
                 <div>
                     <h3>Educational Details</h3>
-                     <div className="p-3 row">
-                        <TextField id="standard-basic-degree" label="Bachelor's Degree" variant="standard" />
-                        <TextField id="standard-basic-college" label="College/University Name" variant="standard" />
-                        <TextField id="standard-basic-year" label="Year Of Graduation" variant="standard" />
+                    <div className="p-3 row">
+                        <TextField value={resumeDetails.degree} onChange={e => setResumeDetails({ ...resumeDetails, degree: e.target.value })} id="standard-basic-degree" label="Bachelor's Degree" variant="standard" />
+                        <TextField value={resumeDetails.college} onChange={e => setResumeDetails({ ...resumeDetails, college: e.target.value })} id="standard-basic-college" label="College/University Name" variant="standard" />
+                        <TextField value={resumeDetails.year} onChange={e => setResumeDetails({ ...resumeDetails, year: e.target.value })} id="standard-basic-year" label="Year Of Graduation" variant="standard" />
 
                     </div>
                 </div>
@@ -86,6 +97,11 @@ function ResumeInputs() {
             default: return null
                 break;
         }
+    }
+
+    const generateSkillAndSummary =()=>{
+        setResumeDetails({...resumeDetails,skills:jobSkills[resumeDetails.job],summary:summaries[resumeDetails.job]})
+        handleNext()
     }
 
 
@@ -135,7 +151,7 @@ function ResumeInputs() {
                         <Box sx={{ flex: '1 1 auto' }} />
                         {
                             activeStep === steps.length - 1 ?
-                                <Button >Generate AI Skills & Summary</Button>
+                                <Button onClick={generateSkillAndSummary} >Generate AI Skills & Summary</Button>
                                 :
                                 <Button onClick={handleNext} >Next</Button>
                         }
