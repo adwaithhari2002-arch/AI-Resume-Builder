@@ -1,13 +1,30 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams} from 'react-router-dom'
 import Preview from '../components/Preview'
 import { FaFileDownload } from "react-icons/fa";
 import Edit from '../components/Edit'
 import { MdTextSnippet } from "react-icons/md";
 import { IoMdRefresh } from "react-icons/io";
 import { FaBackward } from "react-icons/fa";
+import { viewResumeAPI } from '../services/apiService';
 
 function View() {
+
+    const [resume,setResume] = useState({})
+    const {id} = useParams()
+    console.log(resume);
+
+    useEffect(()=>{
+        getResumeDetails()
+    },[])
+
+    const getResumeDetails = async ()=>{
+        const response = await viewResumeAPI(id)
+        if(response.status==200){
+            setResume(response.data)
+        }
+    }
+    
     return (
         <div className='container my-5'>
             <div className="row">
@@ -20,9 +37,9 @@ function View() {
                         {/* edit */}
                         <Edit />
                         {/* all resumes */}
-                        <Link to={'/all-resumes'} style={{ color: '#714a2f' }} className='btn mx-2' ><MdTextSnippet className='fs-3' /> All resumes </Link>
+                        {/* <Link to={'/all-resumes'} style={{ color: '#714a2f' }} className='btn mx-2' ><MdTextSnippet className='fs-3' /> All resumes </Link> */}
                         {/* download history */}
-                        <Link to={'/downloads'} style={{ color: '#714a2f' }} className='btn me-2' ><IoMdRefresh className='fs-3' /> Download History </Link>
+                        {/* <Link to={'/downloads'} style={{ color: '#714a2f' }} className='btn me-2' ><IoMdRefresh className='fs-3' /> Download History </Link> */}
                         {/* back */}
                         <Link to={'/resume-details'} style={{ color: '#714a2f' }} className='btn ' ><FaBackward className='fs-3' /> Home </Link>
 
@@ -30,7 +47,7 @@ function View() {
                     </div>
                     {/* preview component */}
                     <div className="p-5">
-                        <Preview />
+                        <Preview resumeDetails={resume} />
                     </div>
                 </div>
                 <div className="col-lg-2"></div>

@@ -28,6 +28,8 @@ function Header() {
                     <Typography variant="h5" component="div" sx={{ flexGrow: 1}}>
                         <Link to={'/'} className='text-light text-decoration-none'>AI rBuilder</Link>
                     </Typography>
+                     {<Link to={'/all-resumes'}  className='text-light text-decoration-none'> All RESUMES </Link> }
+                     {<Link to={'/downloads'} className='text-light text-decoration-none mx-5'> ALL DOWNLOADS</Link> }
                     <Tooltip title={aboutUsContent}><Button color="inherit" className='fs-6' sx={{fontFamily:'Solway'}}>About US</Button></Tooltip>
                 </Toolbar>
             </AppBar>
