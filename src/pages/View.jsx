@@ -35,11 +35,7 @@ function View() {
                         {/* download */}
                         <button style={{ color: '#714a2f' }} className="btn  me-2"> <FaFileDownload className='fs-3' />Download CV</button>
                         {/* edit */}
-                        <Edit />
-                        {/* all resumes */}
-                        {/* <Link to={'/all-resumes'} style={{ color: '#714a2f' }} className='btn mx-2' ><MdTextSnippet className='fs-3' /> All resumes </Link> */}
-                        {/* download history */}
-                        {/* <Link to={'/downloads'} style={{ color: '#714a2f' }} className='btn me-2' ><IoMdRefresh className='fs-3' /> Download History </Link> */}
+                        <Edit resumeDetails={resume} setResumeDetails={setResume} />
                         {/* back */}
                         <Link to={'/resume-details'} style={{ color: '#714a2f' }} className='btn ' ><FaBackward className='fs-3' /> Home </Link>
 
