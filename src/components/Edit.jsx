@@ -11,6 +11,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { FaXmark } from 'react-icons/fa6';
 import jobRole from '../assets/jobRole.json'
+import { toast } from 'react-toastify';
+import { editResumeAPI } from '../services/apiService';
 
 
 const style = {
@@ -32,10 +34,42 @@ function Edit({ resumeDetails, setResumeDetails }) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const skillRef = React.useRef()
 
     const removeSkill = (skill)=>{
        setResumeDetails({...resumeDetails,skills: resumeDetails.skills.filter(item=>item!=skill)})
     }
+
+    const addSkill = (skill)=>{
+        if(skill){
+            if(resumeDetails?.skills?.map(item=>item.toLowerCase()).includes(skill.toLowerCase())){
+                toast.warning("Given skill is already available... Please add another!!!")
+            }else{
+                setResumeDetails({...resumeDetails,skills:[...resumeDetails?.skills,skill]})
+            }
+            skillRef.current.value = ""
+        }else{
+            toast.info("Input valid skill!!!")
+        }
+    }
+
+     const handleUpdateResume = async ()=>{
+            // make api call to save resume it should execute when finish button clicked
+            const{fullName,location,job,email,phone,github,linkedin,degree,college,year,skills,summary} = resumeDetails
+            if(fullName && location && job && email && phone && github && linkedin && degree && college && year && skills.length>0 && summary){
+                // api call
+                const response = await editResumeAPI(resumeDetails.id,resumeDetails)
+                // console.log(response);
+                if(response.status==200){
+                    toast.success("Resume updated successfully!!!")
+                    setTimeout(() => {
+                        handleClose()
+                    },2500);
+                } 
+            }else{
+                toast.info("Please fill the form completely!!!!")
+            }
+        }
 
     return (
         <div>
@@ -97,8 +131,8 @@ function Edit({ resumeDetails, setResumeDetails }) {
                         <div>
                             <h3>Skills</h3>
                             <div className="d-flex p-3">
-                                <input type="text" placeholder='Add New Skill' className="form-control" />
-                                <Button>Add</Button>
+                                <input ref={skillRef} type="text" placeholder='Add New Skill' className="form-control" />
+                                <Button onClick={()=>addSkill(skillRef.current.value)}>Add</Button>
                             </div>
                             <h5>Added Skills : </h5>
 
@@ -119,7 +153,7 @@ function Edit({ resumeDetails, setResumeDetails }) {
                             </div>
                         </div>
                         {/* update button */}
-                        <button className='btn' style={{ backgroundColor: '#4169E1' }}>UPDATE CV</button>
+                        <button onClick={handleUpdateResume} className='btn' style={{ backgroundColor: '#4169E1' }}>UPDATE CV</button>
                     </Box>
                 </Box>
             </Modal>

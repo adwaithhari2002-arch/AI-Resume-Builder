@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, useParams} from 'react-router-dom'
 import Preview from '../components/Preview'
 import { FaFileDownload } from "react-icons/fa";
@@ -7,9 +7,11 @@ import { MdTextSnippet } from "react-icons/md";
 import { IoMdRefresh } from "react-icons/io";
 import { FaBackward } from "react-icons/fa";
 import { viewResumeAPI } from '../services/apiService';
+import { jsPDF } from "jspdf";
+import html2canvas from 'html2canvas';
 
 function View() {
-
+    const previewRef = useRef()
     const [resume,setResume] = useState({})
     const {id} = useParams()
     console.log(resume);
@@ -24,6 +26,16 @@ function View() {
             setResume(response.data)
         }
     }
+
+    const downloadCV = async ()=>{
+        const previewTag = previewRef.current
+        const canvas = await html2canvas(previewTag)
+        const pdf = new jsPDF()
+        const imageWidth = pdf.internal.pageSize.getWidth()
+        const imageHeight = pdf.internal.pageSize.getHeight()
+        pdf.addImage(canvas,"PNG",0,0,imageWidth,imageHeight)
+        pdf.save("resume.pdf")
+    }
     
     return (
         <div className='container my-5'>
@@ -33,7 +45,7 @@ function View() {
                     {/* navigation icons */}
                     <div className="d-flex justify-content-center align-items-center">
                         {/* download */}
-                        <button style={{ color: '#714a2f' }} className="btn  me-2"> <FaFileDownload className='fs-3' />Download CV</button>
+                        <button onClick={downloadCV} style={{ color: '#714a2f' }} className="btn  me-2"> <FaFileDownload className='fs-3' />Download CV</button>
                         {/* edit */}
                         <Edit resumeDetails={resume} setResumeDetails={setResume} />
                         {/* back */}
@@ -43,7 +55,7 @@ function View() {
                     </div>
                     {/* preview component */}
                     <div className="p-5">
-                        <Preview resumeDetails={resume} />
+                        <div ref={previewRef}><Preview resumeDetails={resume} /></div>
                     </div>
                 </div>
                 <div className="col-lg-2"></div>
